@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     description: "Professional HVAC design, supply & installation across Bengaluru and Hyderabad.",
     type: "website",
   },
+  icons: {
+    icon: process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/favicon.ico` : "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
