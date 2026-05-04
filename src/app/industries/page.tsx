@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getImagePath } from "../utils/imagePath";
+import { getImagePath } from "@/utils/imagePath";
 import { INDUSTRIES } from "@/data/industries";
 
 export const metadata: Metadata = {
