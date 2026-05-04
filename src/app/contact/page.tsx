@@ -23,9 +23,9 @@ export default function ContactPage() {
       <section className="page-hero">
         <div className="container">
           <span className="section-badge">📞 Contact Us</span>
-          <h1 className="display-lg" style={{ margin: "1rem 0 1.5rem" }}>Let's Talk HVAC</h1>
+          <h1 className="display-lg" style={{ margin: "1rem 0 1.5rem" }}>Let&apos;s Talk HVAC</h1>
           <p className="body-lg muted" style={{ maxWidth: 550 }}>
-            Tell us about your project and we'll get back within 24 hours with a custom solution and quote.
+            Tell us about your project and we&apos;ll get back within 24 hours with a custom solution and quote.
           </p>
         </div>
         <style>{`.page-hero { padding: 9rem 0 4rem; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%); border-bottom: 1px solid var(--border); }`}</style>

@@ -11,7 +11,7 @@ export default function ChatWidget() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Expose open to Hero button
-  useEffect(() => { (window as any).__openChat = open; }, [open]);
+  useEffect(() => { (window as unknown as { __openChat?: () => void }).__openChat = open; }, [open]);
   // Auto-scroll
   useEffect(() => { messagesEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
 

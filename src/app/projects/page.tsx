@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Explore Rock Temp's HVAC project portfolio across manufacturing, hotels, and commercial buildings in Bengaluru and Hyderabad.",
 };
 
-const PROJECT_CATEGORIES = ["All", "Manufacturing", "Hotels", "Commercial"];
+// const PROJECT_CATEGORIES = ["All", "Manufacturing", "Hotels", "Commercial"];
 
 export default function ProjectsPage() {
   return (
@@ -14,7 +14,7 @@ export default function ProjectsPage() {
       <section className="page-hero">
         <div className="container">
           <span className="section-badge">📁 Our Projects</span>
-          <h1 className="display-lg" style={{ margin: "1rem 0 1.5rem" }}>Work We're Proud Of</h1>
+          <h1 className="display-lg" style={{ margin: "1rem 0 1.5rem" }}>Work We&apos;re Proud Of</h1>
           <p className="body-lg muted" style={{ maxWidth: 600 }}>
             A growing portfolio of HVAC installations, retrofits, and energy conservation projects across Bengaluru and Hyderabad. More case studies coming soon.
           </p>
@@ -28,7 +28,7 @@ export default function ProjectsPage() {
             <div style={{ fontSize: "5rem", marginBottom: "1.5rem" }}>🚀</div>
             <h2 className="heading-xl" style={{ marginBottom: "1rem" }}>Case Studies Coming Soon</h2>
             <p className="body-lg muted" style={{ maxWidth: 500, margin: "0 auto 2rem" }}>
-              We're documenting our completed projects with full details — system specs, energy savings achieved, and client outcomes. Check back soon.
+              We&apos;re documenting our completed projects with full details — system specs, energy savings achieved, and client outcomes. Check back soon.
             </p>
             <div className="project-placeholder-grid">
               {["Manufacturing Plant — Bengaluru", "Commercial Office Complex — Hyderabad", "5-Star Hotel — Bengaluru", "IT Campus — Bengaluru"].map((p) => (

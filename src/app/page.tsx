@@ -47,7 +47,7 @@ export default function HomePage() {
           </p>
           <div className="hero-cta reveal reveal-delay-3">
             <Link href="/contact" className="btn btn-primary btn-lg">Get a Free Quote ↗</Link>
-            <button className="btn btn-outline btn-lg" onClick={() => (window as any).__openChat?.()}>
+            <button className="btn btn-outline btn-lg" onClick={() => (window as unknown as { __openChat?: () => void }).__openChat?.()}>
               💬 Chat with Aria
             </button>
           </div>

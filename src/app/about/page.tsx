@@ -78,7 +78,7 @@ export default function AboutPage() {
       <section className="section bg-section-alt">
         <div className="container">
           <div className="founder-card">
-            <div className="founder-quote-icon">"</div>
+            <div className="founder-quote-icon">&quot;</div>
             <blockquote className="founder-quote">
               At ROCK TEMP, we believe in building long-term partnerships through our commitment to quality, timely delivery, and customer satisfaction. We aim to create a more comfortable and efficient environment for every client we serve.
             </blockquote>
