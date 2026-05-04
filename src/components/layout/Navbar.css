@@ -22,18 +22,8 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 6px 14px;
-  backdrop-filter: blur(12px);
-  transition: var(--transition);
 }
-.navbar-logo:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(0, 194, 203, 0.4);
-}
-.navbar-logo img { height: 40px; width: auto; object-fit: contain; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3)); }
+.navbar-logo img { height: 42px; width: auto; object-fit: contain; }
 
 .navbar-links {
   display: flex;
