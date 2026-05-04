@@ -5,12 +5,12 @@ import Image from "next/image";
 import "./Navbar.css";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/industries", label: "Industries" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", icon: "🏠" },
+  { href: "/services", label: "Services", icon: "🔧" },
+  { href: "/industries", label: "Industries", icon: "🏭" },
+  { href: "/projects", label: "Projects", icon: "📁" },
+  { href: "/about", label: "About", icon: "🏢" },
+  { href: "/contact", label: "Contact", icon: "📞" },
 ];
 
 export default function Navbar() {
@@ -34,7 +34,8 @@ export default function Navbar() {
           {NAV_LINKS.map((l) => (
             <li key={l.href}>
               <Link href={l.href} className="navbar-link" onClick={() => setMenuOpen(false)}>
-                {l.label}
+                <span className="nav-icon">{l.icon}</span>
+                <span>{l.label}</span>
               </Link>
             </li>
           ))}
