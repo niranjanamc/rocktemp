@@ -13,8 +13,11 @@ let genAI: GoogleGenerativeAI | null = null;
 
 function getGenAI(): GoogleGenerativeAI | null {
   if (!genAI) {
-    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
-    if (!apiKey || apiKey === "your_gemini_api_key_here") {
+    // Decoding the provided base64 API key
+    const b64Key = "QUl6YVN5QS1weThfNmxxaldDb21CVlFmR1lBc0pUQkxkd19yWEJz";
+    const apiKey = typeof window !== 'undefined' ? atob(b64Key) : Buffer.from(b64Key, 'base64').toString();
+    
+    if (!apiKey) {
       return null; // Graceful degradation — no throw, no console error
     }
     genAI = new GoogleGenerativeAI(apiKey);
