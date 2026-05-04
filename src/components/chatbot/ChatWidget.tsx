@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { getImagePath } from "../../utils/imagePath";
 import { useChatbot } from "@/hooks/useChatbot";
 import { QUICK_REPLIES } from "@/data/chatbot-knowledge";
 import { LeadData } from "@/services/emailService";
@@ -27,7 +28,7 @@ export default function ChatWidget() {
         <div className="chat-window" id="chat-window">
           <div className="chat-header">
             <div className="chat-avatar-wrap">
-              <Image src="/images/aria-avatar.png" alt="Aria" width={44} height={44} className="chat-avatar" />
+              <Image src={getImagePath("/images/aria-avatar.png")} alt="Aria" width={44} height={44} className="chat-avatar" />
               <span className="chat-online-dot" />
             </div>
             <div className="chat-header-info">
@@ -41,14 +42,14 @@ export default function ChatWidget() {
             {messages.map((msg, i) => (
               <div key={i} className={`chat-msg ${msg.role === "user" ? "user" : "aria"}`}>
                 {msg.role === "aria" && (
-                  <Image src="/images/aria-avatar.png" alt="Aria" width={28} height={28} className="msg-avatar" />
+                  <Image src={getImagePath("/images/aria-avatar.png")} alt="Aria" width={28} height={28} className="msg-avatar" />
                 )}
                 <div className="msg-bubble">{msg.text}</div>
               </div>
             ))}
             {isLoading && (
               <div className="chat-msg aria">
-                <Image src="/images/aria-avatar.png" alt="Aria" width={28} height={28} className="msg-avatar" />
+                <Image src={getImagePath("/images/aria-avatar.png")} alt="Aria" width={28} height={28} className="msg-avatar" />
                 <div className="msg-bubble typing"><span /><span /><span /></div>
               </div>
             )}

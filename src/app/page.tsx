@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { getImagePath } from "../utils/imagePath";
 import Image from "next/image";
 import { STATS, PROCESS_STEPS } from "@/data/services";
 import { INDUSTRIES } from "@/data/industries";
@@ -25,7 +26,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="hero" id="hero">
         <div className="hero-bg">
-          <Image src="/images/hero/hero-bg.png" alt="HVAC Chiller Plant" fill style={{ objectFit: "cover" }} priority />
+          <Image src={getImagePath("/images/hero/hero-bg.png")} alt="HVAC Chiller Plant" fill style={{ objectFit: "cover" }} priority />
           <div className="hero-overlay" />
         </div>
         <div className="hero-particles">
@@ -104,7 +105,7 @@ export default function HomePage() {
             {INDUSTRIES.map((ind, i) => (
               <div key={ind.id} className={`industry-card reveal reveal-delay-${i + 1}`}>
                 <div className="industry-image-wrap">
-                  <Image src={ind.image} alt={ind.title} fill style={{ objectFit: "cover" }} />
+                  <Image src={getImagePath(ind.image)} alt={ind.title} fill style={{ objectFit: "cover" }} />
                   <div className="industry-overlay" />
                   <div className="industry-icon">{ind.icon}</div>
                 </div>

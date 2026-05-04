@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { getImagePath } from "../utils/imagePath";
 import { INDUSTRIES } from "@/data/industries";
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export default function IndustriesPage() {
             <div className="container">
               <div className={`ind-layout ${i % 2 === 1 ? "reverse" : ""}`}>
                 <div className="ind-image-wrap">
-                  <Image src={ind.image} alt={ind.title} fill style={{ objectFit: "cover", borderRadius: "var(--radius-xl)" }} />
+                  <Image src={getImagePath(ind.image)} alt={ind.title} fill style={{ objectFit: "cover", borderRadius: "var(--radius-xl)" }} />
                   <div className="ind-image-badge">{ind.icon} {ind.title}</div>
                 </div>
                 <div className="ind-content">

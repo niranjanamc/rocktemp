@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getImagePath } from "../../utils/imagePath";
 
 const SERVICES_QUICK = ["HVAC Design", "Chiller Supply", "VRF/VRV Systems", "Retrofit & Energy", "Cooling Towers", "PLC Automation"];
 const INDUSTRIES_QUICK = ["Manufacturing", "Hotels & Hospitality", "Commercial Buildings"];
@@ -68,7 +69,7 @@ export default function Footer() {
       <div className="footer-top">
         <div className="container footer-grid">
           <div className="footer-brand">
-            <Image src="/images/logo.png" alt="Rock Temp" width={190} height={60} />
+            <Image src={getImagePath("/images/logo.png")} alt="Rock Temp" width={190} height={60} />
             <p className="footer-tagline">End-to-end HVAC solutions — from design to commissioning. Trusted by industries across Bengaluru & Hyderabad.</p>
             <div className="footer-socials">
               {SOCIAL_LINKS.map((s) => (

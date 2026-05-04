@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { getImagePath } from "../../utils/imagePath";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -27,7 +28,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="container navbar-inner">
         <Link href="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
-          <Image src="/images/logo.png" alt="Rock Temp Logo" width={200} height={63} priority />
+          <Image src={getImagePath("/images/logo.png")} alt="Rock Temp Logo" width={200} height={63} priority />
         </Link>
 
         <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
