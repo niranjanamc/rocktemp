@@ -1,0 +1,81 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.25rem 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+.navbar-scrolled {
+  background: rgba(10, 15, 30, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0.875rem 0;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.navbar-logo img { height: 44px; width: auto; object-fit: contain; }
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+.navbar-link {
+  padding: 0.5rem 0.875rem;
+  color: rgba(238,242,247,0.8);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.navbar-link:hover { color: var(--teal); background: var(--teal-glow); }
+
+.navbar-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.navbar-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+  transform-origin: center;
+}
+.navbar-burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.navbar-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.navbar-burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 900px) {
+  .navbar-burger { display: flex; }
+  .navbar-links {
+    position: fixed;
+    top: 0; right: -100%;
+    height: 100vh;
+    width: 280px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 5rem 1.5rem 2rem;
+    background: var(--navy-2);
+    border-left: 1px solid var(--border);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+  .navbar-links.open { right: 0; }
+  .navbar-links li { width: 100%; }
+  .navbar-link { display: block; width: 100%; padding: 0.75rem 1rem; }
+}
