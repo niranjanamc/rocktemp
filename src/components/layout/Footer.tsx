@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="footer-top">
         <div className="container footer-grid">
           <div className="footer-brand">
-            <Image src="/images/logo.png" alt="Rock Temp" width={150} height={46} />
+            <Image src="/images/logo.png" alt="Rock Temp" width={190} height={60} />
             <p className="footer-tagline">End-to-end HVAC solutions — from design to commissioning. Trusted by industries across Bengaluru & Hyderabad.</p>
             <div className="footer-socials">
               <a href="mailto:rocktemp.services@gmail.com" className="social-link" aria-label="Email">✉️</a>

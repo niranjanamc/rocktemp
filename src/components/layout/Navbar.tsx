@@ -27,7 +27,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="container navbar-inner">
         <Link href="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
-          <Image src="/images/logo.png" alt="Rock Temp Logo" width={160} height={50} priority />
+          <Image src="/images/logo.png" alt="Rock Temp Logo" width={200} height={63} priority />
         </Link>
 
         <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
