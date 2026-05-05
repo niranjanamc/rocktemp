@@ -101,7 +101,7 @@ export default function ChatWidget() {
       <style>{`
         .chat-fab { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; width: 3.75rem; height: 3.75rem; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--teal)); border: none; color: white; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-blue); transition: var(--transition); }
         .chat-fab:hover { transform: scale(1.1); }
-        .chat-fab.open { background: var(--navy-3); border: 1px solid var(--border); font-size: 1.25rem; }
+        .chat-fab.open { background: var(--navy-3); border: 1px solid var(--border); font-size: 1.25rem; color: var(--white); }
         .chat-fab-ring { position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--teal); animation: pulse-ring 2s infinite; }
 
         .chat-window { position: fixed; bottom: 6.5rem; right: 2rem; z-index: 998; width: 380px; max-height: 600px; background: var(--navy-2); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; overflow: hidden; animation: fadeUp 0.3s ease; }
@@ -113,8 +113,8 @@ export default function ChatWidget() {
         .chat-header-info { flex: 1; }
         .chat-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: white; }
         .chat-status { font-size: 0.75rem; color: rgba(255,255,255,0.8); }
-        .chat-close { background: var(--glass); border: none; color: var(--white); width: 2rem; height: 2rem; border-radius: 50%; cursor: pointer; font-size: 0.875rem; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
-        .chat-close:hover { background: var(--glass-hover); }
+        .chat-close { background: rgba(255,255,255,0.2); border: none; color: white; width: 2rem; height: 2rem; border-radius: 50%; cursor: pointer; font-size: 0.875rem; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+        .chat-close:hover { background: rgba(255,255,255,0.3); }
 
         .chat-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
         .chat-msg { display: flex; gap: 0.5rem; align-items: flex-end; }
