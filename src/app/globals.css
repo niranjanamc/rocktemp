@@ -60,8 +60,9 @@
   --shadow-teal:0 8px 32px rgba(0,157,166,0.15);
 }
 
-/* Dynamic Logo Inversion ONLY when scrolled */
-[data-theme="light"] .navbar-scrolled .navbar-logo img {
+/* Dynamic Logo Inversion ONLY when scrolled (Navbar) or in Footer */
+[data-theme="light"] .navbar-scrolled .navbar-logo img,
+[data-theme="light"] .footer-brand img {
   filter: invert(1) hue-rotate(180deg) brightness(0.8) contrast(1.2);
 }
 
