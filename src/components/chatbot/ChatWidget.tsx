@@ -120,7 +120,7 @@ export default function ChatWidget() {
         .chat-msg { display: flex; gap: 0.5rem; align-items: flex-end; }
         .chat-msg.user { flex-direction: row-reverse; }
         .msg-avatar { border-radius: 50%; flex-shrink: 0; width: 28px; height: 28px; object-fit: cover; }
-        .msg-bubble { max-width: 80%; padding: 0.75rem 1rem; border-radius: var(--radius); font-size: 0.875rem; line-height: 1.5; }
+        .msg-bubble { max-width: 80%; padding: 0.75rem 1rem; border-radius: var(--radius); font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; }
         .chat-msg.aria .msg-bubble { background: var(--glass); border: 1px solid var(--border); color: var(--white); border-bottom-left-radius: 4px; }
         .chat-msg.user .msg-bubble { background: linear-gradient(135deg, var(--blue), var(--teal)); color: white; border-bottom-right-radius: 4px; }
 
