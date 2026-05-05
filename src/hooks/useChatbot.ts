@@ -38,6 +38,21 @@ export function useChatbot() {
     const userText = text ?? input.trim();
     if (!userText || isLoading) return;
 
+    // Client-side rate limiting (20 messages per day per browser)
+    const today = new Date().toISOString().split("T")[0];
+    const savedDate = localStorage.getItem("rocktemp_chat_date");
+    let dailyCount = parseInt(localStorage.getItem("rocktemp_chat_count") || "0", 10);
+
+    if (savedDate !== today) {
+      dailyCount = 0;
+      localStorage.setItem("rocktemp_chat_date", today);
+    }
+
+    if (dailyCount >= 20) {
+      addMessage("aria", "You've reached the daily chat limit! Please call us at +91 9148325253 or connect on WhatsApp to continue the conversation.");
+      return;
+    }
+
     setInput("");
     addMessage("user", userText);
     setIsLoading(true);
@@ -51,6 +66,7 @@ export function useChatbot() {
 
       const newCount = exchangeCount + 1;
       setExchangeCount(newCount);
+      localStorage.setItem("rocktemp_chat_count", (dailyCount + 1).toString());
 
       // After 3 exchanges, transition to lead capture
       if (newCount >= 3 && phase === "chatting") {
