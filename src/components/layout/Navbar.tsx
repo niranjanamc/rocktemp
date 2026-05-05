@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { getImagePath } from "../../utils/imagePath";
@@ -20,6 +21,9 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
@@ -27,7 +31,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""} ${isHome ? "navbar-home" : "navbar-default"}`}>
       <div className="container navbar-inner">
         <Link href="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
           <Image src={getImagePath("/images/logo.png")} alt="Rock Temp Logo" width={200} height={63} priority />
