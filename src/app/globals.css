@@ -36,6 +36,48 @@
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ─── LIGHT THEME OVERRIDES ─────────────────────────── */
+[data-theme="light"] {
+  --navy:       #F8FAFC;
+  --navy-2:     #FFFFFF;
+  --navy-3:     #F1F5F9;
+  --navy-card:  rgba(255, 255, 255, 0.95);
+  --blue:       #1E6FD9;
+  --blue-light: #2563EB;
+  --teal:       #009DA6;
+  --teal-glow:  rgba(0, 157, 166, 0.1);
+  --amber:      #D97706;
+  --white:      #0F172A;
+  --muted:      #475569;
+  --border:     rgba(0,0,0,0.1);
+  --glass:      rgba(255,255,255,0.7);
+  --glass-hover:rgba(255,255,255,0.9);
+  
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.05);
+  --shadow:     0 8px 32px rgba(0,0,0,0.08);
+  --shadow-lg:  0 20px 60px rgba(0,0,0,0.1);
+  --shadow-blue:0 8px 32px rgba(30,111,217,0.2);
+  --shadow-teal:0 8px 32px rgba(0,157,166,0.15);
+}
+
+/* Dynamic Logo Inversion */
+[data-theme="light"] .navbar-logo img {
+  filter: invert(1) hue-rotate(180deg) brightness(0.8) contrast(1.2);
+}
+
+/* Fix primary button text color in light mode */
+[data-theme="light"] .btn-primary {
+  color: #FFFFFF;
+}
+
+[data-theme="light"] .chat-name {
+  color: #FFFFFF; /* Ensure chat header text stays white on the gradient */
+}
+
+[data-theme="light"] .founder-quote-icon {
+  opacity: 0.15; /* Tone down quote icon contrast */
+}
+
 /* ─── RESET & BASE ───────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

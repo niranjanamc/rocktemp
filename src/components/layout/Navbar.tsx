@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { getImagePath } from "../../utils/imagePath";
+import { useTheme } from "@/components/theme/ThemeProvider";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -17,6 +18,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -44,6 +46,11 @@ export default function Navbar() {
             <Link href="/contact" className="btn btn-primary btn-sm" onClick={() => setMenuOpen(false)}>
               Get a Quote
             </Link>
+          </li>
+          <li>
+            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
+              {theme === "dark" ? "☀️" : "🌙"}
+            </button>
           </li>
         </ul>
 
