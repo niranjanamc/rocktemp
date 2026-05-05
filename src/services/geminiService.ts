@@ -34,7 +34,7 @@ export async function sendMessage(
     if (!ai) return FALLBACK_MSG;
 
     const model = ai.getGenerativeModel({
-      model: "gemini-1.5-flash-latest",
+      model: "gemini-flash-latest",
       systemInstruction: CHATBOT_SYSTEM_PROMPT,
     });
 
