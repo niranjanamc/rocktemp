@@ -60,9 +60,18 @@
   --shadow-teal:0 8px 32px rgba(0,157,166,0.15);
 }
 
-/* Dynamic Logo Inversion */
-[data-theme="light"] .navbar-logo img {
+/* Dynamic Logo Inversion ONLY when scrolled */
+[data-theme="light"] .navbar-scrolled .navbar-logo img {
   filter: invert(1) hue-rotate(180deg) brightness(0.8) contrast(1.2);
+}
+
+/* Force hero section text to always stay light because background image is dark */
+.hero h1, .hero p, .hero .section-badge {
+  color: #EEF2F7 !important;
+}
+.hero .btn-outline {
+  color: #EEF2F7 !important;
+  border-color: rgba(255,255,255,0.3) !important;
 }
 
 /* Fix primary button text color in light mode */
