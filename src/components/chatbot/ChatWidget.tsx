@@ -28,7 +28,7 @@ export default function ChatWidget() {
         <div className="chat-window" id="chat-window">
           <div className="chat-header">
             <div className="chat-avatar-wrap">
-              <Image src={getImagePath("/images/aria-avatar.png")} alt="Aria" width={44} height={44} className="chat-avatar" />
+              <img src={getImagePath("/images/aria-avatar.png")} alt="Aria" className="chat-avatar" />
               <span className="chat-online-dot" />
             </div>
             <div className="chat-header-info">
@@ -42,14 +42,14 @@ export default function ChatWidget() {
             {messages.map((msg, i) => (
               <div key={i} className={`chat-msg ${msg.role === "user" ? "user" : "aria"}`}>
                 {msg.role === "aria" && (
-                  <Image src={getImagePath("/images/aria-avatar.png")} alt="Aria" width={28} height={28} className="msg-avatar" />
+                  <img src={getImagePath("/images/aria-avatar.png")} alt="Aria" className="msg-avatar" />
                 )}
                 <div className="msg-bubble">{msg.text}</div>
               </div>
             ))}
             {isLoading && (
               <div className="chat-msg aria">
-                <Image src={getImagePath("/images/aria-avatar.png")} alt="Aria" width={28} height={28} className="msg-avatar" />
+                <img src={getImagePath("/images/aria-avatar.png")} alt="Aria" className="msg-avatar" />
                 <div className="msg-bubble typing"><span /><span /><span /></div>
               </div>
             )}
@@ -113,8 +113,8 @@ export default function ChatWidget() {
         .chat-header-info { flex: 1; }
         .chat-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: white; }
         .chat-status { font-size: 0.75rem; color: rgba(255,255,255,0.8); }
-        .chat-close { background: rgba(255,255,255,0.2); border: none; color: white; width: 2rem; height: 2rem; border-radius: 50%; cursor: pointer; font-size: 0.875rem; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
-        .chat-close:hover { background: rgba(255,255,255,0.3); }
+        .chat-close { background: var(--glass); border: none; color: var(--white); width: 2rem; height: 2rem; border-radius: 50%; cursor: pointer; font-size: 0.875rem; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+        .chat-close:hover { background: var(--glass-hover); }
 
         .chat-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
         .chat-msg { display: flex; gap: 0.5rem; align-items: flex-end; }
